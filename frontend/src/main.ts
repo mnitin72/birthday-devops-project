@@ -22,6 +22,35 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         Aaj ke is khaas din mein,<br>
         jab tare bhi muskura rahe hain<br>
         aur farishte bhi gungunaa rahe hain —<br><br>
-        <em>tujhe duniya ki saari khushiyaan milengi,</em><br>
+        tujhe duniya ki saari khushiyaan milengi,<br>
         har sapna sach hoga,<br>
         har raat mein chand roshan rahega,<br>
+        aur har subah nayi umeed lekar aayegi.<br><br>
+        Tere liye yeh fairy tale sirf shuru hoti hai aaj —<br>
+        baaki sab chapters tu khud likhegi. 🌟
+      </p>
+    </div>
+    <div class="footer-glow">✦ May your every wish come true ✦</div>
+  </div>
+</div>
+`
+
+document.getElementById('music-btn')!.addEventListener('click', () => {
+  if (playing) {
+    audio.pause()
+    document.getElementById('music-btn')!.textContent = '🎵 Play Music'
+  } else {
+    audio.play()
+    document.getElementById('music-btn')!.textContent = '⏸ Pause Music'
+  }
+  playing = !playing
+})
+
+const starsContainer = document.getElementById('stars')!
+for (let i = 0; i < 80; i++) {
+  const star = document.createElement('div')
+  star.className = 'star'
+  const size = Math.random() * 3 + 1
+  star.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--dur:${Math.random()*3+1.5}s;animation-delay:${Math.random()*3}s;`
+  starsContainer.appendChild(star)
+}
