@@ -55,6 +55,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 <div class="ticks"></div>
 <section id="spacer"></section>
-`
+
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
