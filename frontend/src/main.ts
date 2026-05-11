@@ -1,24 +1,6 @@
 import './style.css'
 
-let audio: HTMLAudioElement | null = null
-let playing = false
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `<div class="fairy-bg"><div class="stars-container" id="stars"></div><div class="content"><div class="crown">👑</div><div class="title-box"><div class="subtitle-tag">✦ Once Upon A Birthday ✦</div><div class="main-title">Happy Birthday</div><div class="main-title big">NS</div><div class="divider"></div><div class="birthday-label">A Fairy Tale Celebration</div></div><button id="music-btn">🎵 Play Music</button><div class="wish-card"><p class="wish-text">Aaj ke is khaas din mein, jab tare bhi muskura rahe hain — tujhe duniya ki saari khushiyaan milengi, har sapna sach hoga. Tere liye yeh fairy tale sirf shuru hoti hai aaj. 🌟</p></div><div class="footer-glow">✦ May your every wish come true ✦</div></div></div>`
-
-document.getElementById('music-btn')!.addEventListener('click', () => {
-  if (!audio) {
-    audio = new Audio('/song.mp3')
-    audio.loop = true
-  }
-  if (playing) {
-    audio.pause()
-    document.getElementById('music-btn')!.textContent = '🎵 Play Music'
-  } else {
-    audio.play().catch(err => console.error('Audio error:', err))
-    document.getElementById('music-btn')!.textContent = '⏸ Pause Music'
-  }
-  playing = !playing
-})
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `<div class="fairy-bg"><div class="stars-container" id="stars"></div><div class="content"><div class="crown">👑</div><div class="title-box"><div class="subtitle-tag">✦ Once Upon A Birthday ✦</div><div class="main-title">Happy Birthday</div><div class="main-title big">NS</div><div class="divider"></div><div class="birthday-label">A Fairy Tale Celebration</div></div><div class="yt-box"><iframe width="300" height="80" src="https://www.youtube.com/embed/oPXULAExv4g?controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="wish-card"><p class="wish-text">Aaj ke is khaas din mein, jab tare bhi muskura rahe hain — tujhe duniya ki saari khushiyaan milengi, har sapna sach hoga. Tere liye yeh fairy tale sirf shuru hoti hai aaj. 🌟</p></div><div class="footer-glow">✦ May your every wish come true ✦</div></div></div>`
 
 const starsContainer = document.getElementById('stars')!
 for (let i = 0; i < 80; i++) {
